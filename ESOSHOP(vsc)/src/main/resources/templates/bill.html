@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en" style="height: 100%; margin: 0;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/templatemo.css">
+  <link rel="stylesheet" href="css/payment.css">
+
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" th:href="@{/home}"><img id="MDB-logo"
+          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.png" alt="MDB Logo"
+          draggable="false" height="30" /></a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="d-flex align-items-center w-100 form-search mr-2">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
+          </div>
+          <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
+        </form>
+
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item mr-2" th:if="${session.customer!=null}">
+            <a class="nav-link d-flex align-items-center" th:href="@{/cart}">Cart</a>
+          </li>
+          <li class="nav-item" style="width: 85px" th:if="${session.account ==null}">
+            <a class="nav-link d-flex align-items-center" th:href="@{/login}">Sign In</a>
+          </li>
+          <li class="nav-item" style="width: 85px" th:if="${session.customer !=null}">
+            <a class="nav-link d-flex align-items-center" th:href="@{/logout}">LogOut</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <div class="container-fluid" style="margin-top: 100px; margin-bottom: 150px;">
+    <form>
+      <div class="container mt-6 mb-7">
+        <div class="row justify-content-center" id="viewbill">
+          <script th:inline="javascript">
+            var bill = [[${bill}]];
+            var viewbill = document.getElementById("viewbill");
+            var status = bill.status;
+            console.log(status)
+            if (status == 0) {
+              viewbill.innerHTML = getBill(bill);
+            } else if (status == 1 ) {
+              viewbill.innerHTML = "pay success!<a href=feedback"+bill.orderId+">feedbacks</a>";
+            }
+
+            function getBill(bill) {
+              html = '<div class="col-lg-12 col-xl-10">\n' +
+                '            <div class="card">\n' +
+                '              <div class="card-body p-5">\n' +
+                '                <h2>\n' +
+                '                  Hey ' + bill.customer.name + ',\n' +
+                '                </h2>\n' +
+                '                <p class="fs-sm">\n' +
+                '                  This is the receipt for a payment of <strong>$312.00</strong> (USD) you made to Spacial Themes.\n' +
+                '                </p>\n' +
+                '                <div class="border-top border-gray-200 mt-4 py-4">\n' +
+                '                  <div class="row">\n' +
+                '                    <div class="col-md-6">\n' +
+                '                      <div class="text-muted mb-2">Client</div>\n' +
+                '                      <strong>\n' +
+                '                        ' + bill.customer.name + '\n' +
+                '                      </strong>\n' +
+                '                      <p class="fs-sm">\n' +
+                '                        ' + bill.customer.address + '\n' +
+                '                        <br>\n' +
+                '                        <a href="#!" class="text-purple">' + bill.customer.email + '\n' +
+                '                        </a>\n' +
+                '                      </p>\n' +
+                '                    </div>\n' +
+                '                    <div class="col-md-6 text-md-end">\n' +
+                '                      <div class="text-muted mb-2">Order Date</div>\n' +
+                '                      <strong>' + bill + '</strong>\n' +
+                '                    </div>\n' +
+                '                  </div>\n' +
+                '                </div>\n' +
+                '                <table class="table border-bottom border-gray-200 mt-3">\n' +
+                '                  <thead>\n' +
+                '                    <tr>\n' +
+                '                      <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm px-0">Product</th>\n' +
+                '                      <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm  text-center px-0">Color</th>\n' +
+                '                      <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm  text-center px-0">Quantity</th>\n' +
+                '                      <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm text-end px-0">Price</th>\n' +
+                '                      <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm text-end px-0">Amount</th>\n' +
+                '                    </tr>\n' +
+                '                  </thead>\n' +
+                '                  <tbody>\n' +
+                '                      ' + getListOrderdetail(bill) + ' \n' +
+                '                  </tbody>\n' +
+                '                </table>\n' +
+                '                <div class="mt-5">\n' +
+                '                  <div class="d-flex justify-content-end">\n' +
+                '                    <p class="text-muted me-3">Ship</p>\n' +
+                '                    <span>390</span>\n' +
+                '                  </div>\n' +
+                '                  <div class="d-flex justify-content-end mt-3">\n' +
+                '                    <h5 class="me-3">Total:</h5>\n' +
+                '                    <h5 class="text-success">' + bill.totalAmount + '</h5>\n' +
+                '                  </div>\n' +
+                '                </div>\n' +
+                '              </div>\n' +
+                '              <a style="width="500" href="/pay' + bill.orderId + '"><button type="button"\n' +
+                '                class="btn btn-dark btn-lg card-footer-btn justify-content-center text-uppercase-bold-sm hover-lift-light">\n' +
+                '                Pay Now\n' +
+                '              </button> </a>\n' +
+                '            </div>\n' +
+                '          </div>';
+              return html;
+            }
+
+            function getListOrderdetail(bill) {
+              var html = '';
+              bill.orderdetails.forEach(function(od) {
+                html = html + ' <tr>\n' +
+                  '                      <td class="px-0">' + od.product.name + '</td>\n' +
+                  '                      <td class="text-center px-0"><img width="50px"src="/img/' + od.image +
+                  '"></td>\n' +
+                  '                      <td class="text-center px-0">' + od.quantity + '</td>\n' +
+                  '                      <td class="text-end px-0">' + od.price + '$</td>\n' +
+                  '                      <td class="text-end px-0">' + od.totalPrice + '$</td>\n' +
+                  '                    </tr>';
+              })
+              return html;
+            }
+          </script>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark" id="tempaltemo_footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 pt-5">
+          <h2 class="h2 text-success border-bottom pb-3 border-light logo">Miracle Shop</h2>
+          <ul class="list-unstyled text-light footer-link-list">
+            <li>
+              <i class="fas fa-map-marker-alt fa-fw"></i>
+              123 Consectetur at ligula 10660
+            </li>
+            <li>
+              <i class="fa fa-phone fa-fw"></i>
+              <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+            </li>
+            <li>
+              <i class="fa fa-envelope fa-fw"></i>
+              <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 pt-5">
+          <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+          <ul class="list-unstyled text-light footer-link-list">
+            <li><a class="text-decoration-none" href="#">Home</a></li>
+            <li><a class="text-decoration-none" href="#">About Us</a></li>
+            <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+            <li><a class="text-decoration-none" href="#">FAQs</a></li>
+            <li><a class="text-decoration-none" href="#">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="w-100 bg-black py-3">
+      <div class="container">
+        <div class="row pt-2">
+          <div class="col-12">
+            <p class="text-left text-light">
+              Copyright &copy; 2021 Company Name
+              | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer -->
+
+</body>
+
+</html>

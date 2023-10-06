@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Màu nền của body */
+}
+
+.container_all {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: red;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(116, 50, 249);
+    
+}
+
+.navbar {
+    background-color: green;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.content-container {
+    margin-left: 250px; /* Width of the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Chiều dài của content sẽ bằng 100% trừ đi chiều rộng của sidebar */
+    overflow-y: auto; /* Thêm thanh cuộn cho content nếu nó quá dài */
+}
+
+.content {
+    background-color: white; /* Màu nền của content */
+}
+
+
+#productDetailForm {
+    display: none;
+}

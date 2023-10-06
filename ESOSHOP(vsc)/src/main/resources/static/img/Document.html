@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost:8080/staff/addproduct? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./Document_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="./Document_files/bootstrap.bundle.min.js.tải xuống" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Document_files/all.min.css">
+    <link rel="stylesheet" href="./Document_files/templatemo.css">
+
+    <link rel="stylesheet" href="./Document_files/admin.css">
+    <link rel="stylesheet" href="./Document_files/image.css">
+    <script src="./Document_files/jquery.slim.min.js.tải xuống"></script>
+    <script src="./Document_files/popper.min.js.tải xuống"></script>
+    <script src="./Document_files/bootstrap.bundle.min.js(1).tải xuống"></script>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1130.0" data-gr-ext-installed="">
+
+    <div class="container_all">
+
+        <div class="sidebar" style="overflow: hidden;">
+            <div class="row flex-column" style="margin-top: 150px; margin-left: 50px;">
+
+
+                <div class="col-6"><span style="font-size: 30px; color: white; font-weight: bold;">Miracle</span></div>
+
+                <div class="col-10 mt-5 d-flex align-items-center">
+                    <div style="width: 30px;" class="mr-3"><i class="fa-solid fa-user " style="color: #ffffff;"></i>
+                    </div>
+                    <a href="http://localhost:8080/staff/addproduct?#" style="color: white; text-decoration:none; ">User profile</a>
+                </div>
+                <div class="col-10 mt-4 d-flex align-items-center">
+                    <div style="width: 30px;" class="mr-3"><i class="fa-solid fa-box-open " style="color: #ffffff;"></i>
+                    </div>
+
+                    <a href="http://localhost:8080/staff/addproduct?#" style="color: white; text-decoration:none ; ">Product</a>
+
+                </div>
+                <div class="col-10 mt-4 d-flex align-items-center">
+                    <div style="width: 30px;" class="mr-3"><i class="fa-solid fa-clipboard-list " style="color: #ffffff;"></i></div>
+
+                    <a href="http://localhost:8080/staff/addproduct?#" style="color: white; text-decoration:none ;">Order</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="http://localhost:8080/staff/addproduct?#">
+                    <img id="MDB-logo" src="./Document_files/logo-mdb-jquery-small.png" alt="MDB Logo" draggable="false" height="30">
+                </a>
+
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left links -->
+
+                    <!-- Left links -->
+
+                    <form class="d-flex align-items-center w-100 form-search mr-2">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search" aria-label="Search">
+                        </div>
+                        <a href="http://localhost:8080/staff/addproduct?#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
+                    </form>
+
+                    <ul class="navbar-nav ms-3">
+
+                        <li class="nav-item mr-2">
+
+                        </li>
+                        <li class="nav-item" style="width: 85px;">
+                            <a class="nav-link d-flex align-items-center" href="http://localhost:8080/staff/addproduct?#!">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Collapsible wrapper -->
+            </div>
+        </div>
+
+        <div class="content-container " style="padding-top: 100px;">
+            <section style="background-color: #eee;" class="content">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <h2>Add new product</h2>
+                            <form id="productForm">
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                                <div class="row mb-3">
+
+                                    <div class="form-outline">
+                                        Product name <input class="form-control" type="text" id="inputProductName" name="productName" placeholder="Name*" required="" fdprocessedid="5slevu">
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row mb-3">
+
+                                    <div class="col-6">
+                                        <div class="form-floating ">
+                                            <textarea id="inputContent" name="productDescription" rows="4" cols="87" placeholder="Contents*" style="outline: none; border: 1px solid white; border-radius: 5px;" required=""></textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4 ">
+                                            <select class="form-select" id="selectCategory" name="category" aria-label="Default select example" required="" fdprocessedid="6yxw8o"><option selected="" value="0">category</option><option value="1">Iphone</option><option value="2">Laptop</option><option value="3">Ipad</option></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4">
+
+
+                                            <select class="form-select" id="selectBrand" name="brand" aria-label="Default select example" required="" fdprocessedid="cngsqe">
+                                                <option selected="">Brand*</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4">
+
+                                            <input type="text" id="inputPrice" class="form-control" name="price" required="" placeholder="Price*" fdprocessedid="9n7hy">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4">
+
+                                            <input type="text" id="inputUnit" class="form-control" name="unit" required="" placeholder="Unit*" fdprocessedid="750iu5">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="inputSize" class="form-control" placeholder="Size" name="size" fdprocessedid="lljv">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-outline mb-4">
+                                            <input type="number" id="inputQuantity" class="form-control" name="quantity" placeholder="Quantity" min="1" fdprocessedid="4r97gb">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <!-- <div class="containerImage">
+                                        <input type="file" id="file-input" accept="image/png, image/jpeg"
+                                            onchange="preview()" multiple>
+                                        <label for="file-input">
+                                            <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                                        </label>
+                                        <p id="num-of-files">No Files Chosen</p>
+                                        <div id="images"></div>
+                                    </div> -->
+
+
+
+
+                                <!-- Checkbox -->
+
+                                <!-- Submit button -->
+
+                                <button type="submit" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addButton" fdprocessedid="266yki">
+                                    Add
+                                </button>
+                        </form></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!--  get option categories -->
+    <script>
+        var categories = [{"id":1,"name":"Iphone","description":null},{"id":2,"name":"Laptop","description":null},{"id":3,"name":"Ipad","description":null}];
+        console.log(categories);
+        var select = document.getElementById('selectCategory');
+        select.innerHTML = optioncategoty();
+        function optioncategoty(){
+            var html='<option selected value="0">category</option>';
+            categories.forEach(function(c){
+                html = html+'<option value="'+c.id+'">'+c.name+'</option>';
+            })
+            return html;
+        }
+    </script>
+    <!--  get option supplier -->
+    <script>
+        var suppliers = [{"id":1,"name":"Apple","address":"123@123a","phone":"123456789"}];
+        console.log(categories);
+        var select = document.getElementById('selectSupplier');
+        select.innerHTML = optioncategoty();
+        function optioncategoty(){
+            var html='<option selected value="0">Supplier</option>';
+            suppliers.forEach(function(s){
+                html = html+'<option value="'+s.id+'">'+s.name+'</option>';
+            })
+            return html;
+        }
+    </script>
+
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

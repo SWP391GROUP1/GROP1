@@ -1,0 +1,16 @@
+.star-container {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    margin-right: 5px;
+}
+
+.star.selected {
+    color: yellow;
+    text-shadow: none;
+}

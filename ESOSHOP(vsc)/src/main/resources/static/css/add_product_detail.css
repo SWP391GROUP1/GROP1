@@ -1,0 +1,56 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.color-select {
+    display: none;
+}
+
+#submit-button {
+
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#product-image {
+    display: none;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+#productImagePreview {
+
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    /* Đảm bảo rằng ảnh không vượt quá kích thước của phần tử cha */
+
+}
+
+select,
+input[type="file"],
+button[type="submit"],
+#productImagePreview {
+    display: block;
+    margin-top: 10px;
+}
+
+#productImageSection {
+    display: none;
+}
